@@ -4,12 +4,22 @@ html
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title #{__('TITLE', community)}
-    link(href="css/style.css", rel="stylesheet", type="text/css")
-    link(href="//fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
+    link(href="https://org.openticket.tech/css/main.css", rel="stylesheet", type="text/css")
   body
-    #wrapper
-      .main
-        .header
-          h1
-            strong #{community}
-          h2(class="#{isFailed?'error':''}") !{message}
+    section(class="hero is-fullheight is-bold #{isFailed?'is-danger':'is-success'}")
+      .hero-body
+        .container
+          h1.title #{community} Slack
+          h2(class="subtitle #{isFailed?'error':''}") !{message}
+          h2.subtitle
+            a(href="/").button.is-inverted.is-danger.is-large.is-outlined Go back
+      .hero-foot
+        nav.tabs.is-boxed.is-fullwidth
+          .container
+            ul
+              li
+                a(href="//org.openticket.tech") Openticket project website
+              li
+                a(href="//twitter.com/open_ticket") Twitter
+              li
+                a(href="//openticket.slack.com") Already have an account? Sign in
